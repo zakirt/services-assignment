@@ -22,17 +22,17 @@ export class UsersService {
     }
 
     deactivateUser(id: number) {
-        let i = this.users.findIndex(user => user.id === id);
+        let i = this.users.findIndex((user: UserModel) => user.id === id);
         this.users[i].active = false;
         this.userStatusChanged.emit(id);
         this.statusCounterService.updateDeactivateCount();
     }
 
     get activeUsers() {
-        return this.users.filter(user => user.active); 
+        return this.users.filter((user: UserModel) => user.active); 
     }
 
     get inactiveUsers() {
-        return this.users.filter(user => !user.active);
+        return this.users.filter((user: UserModel) => !user.active);
     }
 }
