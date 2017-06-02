@@ -13,15 +13,7 @@ export class AppComponent implements OnInit {
     activeUsers: UserModel[];
     inactiveUsers: UserModel[];
 
-    constructor(private usersService: UsersService) {}
+    constructor(private usersService: UsersService) { }
 
-    ngOnInit() {
-        this.activeUsers = this.usersService.activeUsers;
-        this.inactiveUsers = this.usersService.inactiveUsers;
-
-        this.usersService.userStatusChanged.subscribe((id: number) => {
-            this.activeUsers = this.usersService.activeUsers;
-            this.inactiveUsers = this.usersService.inactiveUsers;
-        });
-    }
+    ngOnInit() { }
 }
