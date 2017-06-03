@@ -28,11 +28,11 @@ export class UsersService {
         this.statusCounterService.updateDeactivateCount();
     }
 
-    get activeUsers() {
+    get activeUsers(): UserModel[] {
         return this.users.filter((user: UserModel) => user.active); 
     }
 
-    get inactiveUsers() {
+    get inactiveUsers(): UserModel[] {
         return this.users.filter((user: UserModel) => !user.active);
     }
 }
